@@ -23,12 +23,14 @@ _ has_many :answers
 belongs_to :user
 has_one :answer
 
-## answer テーブル
+## answers テーブル
 
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
-| product   | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| answer      | string     | null: false                    |
+| description | text       |                                |
+| user        | references | null: false, foreign_key: true |
+| product     | references | null: false, foreign_key: true |
 
 ### Association
 
