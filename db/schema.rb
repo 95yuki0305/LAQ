@@ -13,18 +13,16 @@
 ActiveRecord::Schema.define(version: 2021_05_28_033710) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "answer", null: false
+    t.string "response", null: false
     t.text "description"
-    t.bigint "user_id", null: false
     t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
-    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "question", null: false
+    t.text "quiz", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -45,6 +43,5 @@ ActiveRecord::Schema.define(version: 2021_05_28_033710) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "answers", "users"
   add_foreign_key "questions", "users"
 end
