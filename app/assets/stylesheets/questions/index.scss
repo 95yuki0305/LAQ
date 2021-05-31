@@ -20,6 +20,7 @@ a {
   padding: 5vh 15vw;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  margin-bottom: 24px;
 }
 
 .service-title {
@@ -44,19 +45,6 @@ a {
                -2px -2px 10px #777;
 }
 
-.store-btn {
-  display: flex;
-  margin-top: 24px;
-}
-
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
-}
-
-.google-btn {
-  height: 9vh;
-}
 
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */
 
@@ -321,4 +309,5 @@ a {
   font-size: 2vh;
 }
 
-/* //商品一覧 */
+
+  /* //商品一覧 */
