@@ -30,7 +30,7 @@ has_one :answer
 | answer      | string     | null: false                    |
 | description | text       |                                |
 | user        | references | null: false, foreign_key: true |
-| product     | references | null: false, foreign_key: true |
+| question    | references | null: false, foreign_key: true |
 
 ### Association
 
