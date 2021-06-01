@@ -1,14 +1,11 @@
 <%= form_with model: @question_answer, url:questions_path, local: true do |f| %>
-  <div class="post-box">
+  <div class="main-box">
     Let's Active Question
-    <%= f.text_area :quiz, class: "quiz", placeholder:"問題文" %>
-    <%= f.text_area :response, class: "response", placeholder:"解答" %>
-    <%= f.text_area :description, class: "description", placeholder: "説明" %>
-    <a class="button">
-      <span class="button_inner"><%= f.submit "LAQ" %></span>
-    </a>
-   <%= link_to(root_path, class: 'purchase-btn') do %>
-      戻る
-   <% end %>
+    <div class="question-box">
+      <%= f.text_area :quiz, class: "quiz", placeholder:"問題文" %>
+    </div>
+      <%= f.text_area :response, class: "response", placeholder:"解答" %>
+      <%= f.text_area :description, class: "description", placeholder: "説明" %>
+      <%= f.submit "LAQ", class:"button" %>
   </div>
 <% end %>

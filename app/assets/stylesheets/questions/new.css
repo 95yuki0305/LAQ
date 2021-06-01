@@ -1,5 +1,5 @@
-.post-box {
-  height:800px;
+.main-box {
+  height: 100vh;
   background-color: lightgray;
   display: flex;
   justify-content: center;
@@ -7,8 +7,11 @@
   flex-direction: column;
 }
 
+.question-box {
+  display: flex;
+}
+
 .quiz {
-  height: 50px;
   width: 300px;
   margin: 20px;
   resize: none;
@@ -29,45 +32,20 @@
 }
 
 .button {
-  background: #5b9507 ;
-  background: -moz-linear-gradient(top, #a3ea3f, #5b9507);
-  background: -webkit-gradient(linear,
-    left top,
-    left bottom,
-    from(#a3ea3f),
-    to(#5b9507));
-  border: 1px solid #487606;
-  border-radius: 28px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), inset 0 0 1px #fff;
-  color: #fff;
-  display: inline-block;
-  font-family: "Jun 501", sans-serif;
-  font-size: 26px;
-  height: 56px;
-  line-height: 56px;
-  overflow: hidden;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: 0 -1px 1px #487606;
-  width: 200px;
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #00DD00;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */  /* 影の設定 */
+  border        : 2px solid #004400;
 }
 
-.button_inner {
-  display: block;
-  height: 56px;
-  line-height: 56px;
-  opacity: 0.9;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.button.hover .button_inner,
-.button:hover .button_inner{
-  opacity: 1;
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+.button:hover {
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
 }
