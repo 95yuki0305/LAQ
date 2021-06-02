@@ -15,7 +15,7 @@
 }
 
 .logo {
-  color: white;
+  width: 100px;
 }
 
 .navbar {
@@ -28,47 +28,40 @@
 }
 
 .user-nickname {
-  width:100px;
-  font-size:14px;
-  color:red;
-  text-align:center;
-  display:block;
-  padding:10px 0 10px;
-  background:#6BCBF6;
-  border-radius: 20px;
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px 20px;
+  color: #FFFFFF;
+  line-height: 1em;         /* 1行の高さ  */
+  transition: .3s;
+  border: 2px solid #f4f1f1;
+  font-weight: bold;
+  margin-right: 3vw;
+}
+.user-nickname:hover {
+  color: #000066;     /* 背景色     */
+  background: #ffffff;
+}
+
+.user-button {
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px 20px;
+  color: #FFFFFF;
+  line-height: 1em;         /* 1行の高さ  */
+  transition: .3s;
+  border: 2px solid #f4f1f1;
+  font-weight: bold;
   margin-right: 3vw;
 }
 
-.logout {
-  width:100px;
-  font-size:14px;
-  color:#FFFFFF;
-  text-align:center;
-  display:block;
-  padding:10px 0 10px;
-  background:#6BCBF6;
-  border-radius: 20px;
-}
-
-.login {
-  width:100px;
-  font-size:14px;
-  color:#FFFFFF;
-  text-align:center;
-  display:block;
-  padding:10px 0 10px;
-  background:#6BCBF6;
-  border-radius: 20px;
-  margin-right: 3vw;
-}
-
-.sign-up {
-  width:100px;
-  font-size:14px;
-  color:#FFFFFF;
-  text-align:center;
-  display:block;
-  padding:10px 0 10px;
-  background:#6BCBF6;
-  border-radius: 20px;
+.user-button:hover {
+  color: #000066;     /* 背景色     */
+  background: #ffffff;
 }

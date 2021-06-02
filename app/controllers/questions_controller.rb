@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+  def index
+  end
+  
   def new
     @question_answer = QuestionAnswer.new
   end
