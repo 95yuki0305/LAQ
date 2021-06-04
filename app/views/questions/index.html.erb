@@ -11,7 +11,45 @@
       アプリです
     </p>
   </div>
+  <h2 class='memory-mechanism'>
+    記憶のメカニズム
+  </h2>
+  <div class="memory-contents">
+    <h2 class='service-title'>
+      すぐに忘れる!!
+    </h2>
+  </div>
+  <div class='app-description'>
+    <h2 class='title'>
+      <span class="str1">LAQ</span>とは？
+    </h2>
+
+      <div class="laq-description">
+        <span class="str2">L</span>et's <span class="str2">A</span>ctive <span class="str2">Q</span>uestion
+      </div>
+    <%#<ul class="laq-description">
+      <li>
+        <div class="laq-str">
+          Let's
+        </div>
+        <%= image_tag 'LAQ.png', class:"laq-img"
+      </li>
+      <li>
+        <div class="laq-str">
+          Active
+        </div>
+        <%= image_tag 'LAQ.png', class:"laq-img"
+      </li>
+      <li>
+        <div class="laq-str">
+          Question
+        </div>
+        <%= image_tag 'LAQ.png', class:"laq-img"
+      </li>
+      </div>%>
+  </div>
 </div>
 <%= link_to(new_question_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>投稿する</span>
 <% end %>
+<%= render "shared/footer" %>

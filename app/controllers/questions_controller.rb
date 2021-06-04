@@ -1,5 +1,9 @@
 class QuestionsController < ApplicationController
+  
   def index
+    if user_signed_in?
+      @question = Question.where(user_id: current_user.id).count
+    end
   end
   
   def new

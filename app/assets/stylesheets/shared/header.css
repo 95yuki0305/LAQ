@@ -27,6 +27,21 @@
   justify-content: flex-end;
 }
 
+.laq-count {
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px 20px;
+  color: #FFFFFF;
+  line-height: 1em;         /* 1行の高さ  */
+  transition: .3s;
+  border: 2px solid #f4f1f1;
+  font-weight: bold;
+  margin-right: 3vw;
+}
+
 .user-nickname {
   display: inline-block;
   border-radius: 3px;
@@ -46,7 +61,7 @@
   background: #ffffff;
 }
 
-.user-button {
+.header-button {
   display: inline-block;
   border-radius: 3px;
   font-size: 14px;
@@ -61,7 +76,7 @@
   margin-right: 3vw;
 }
 
-.user-button:hover {
+.header-button:hover {
   color: #000066;     /* 背景色     */
   background: #ffffff;
 }
