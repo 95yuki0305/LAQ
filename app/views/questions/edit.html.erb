@@ -1,0 +1,11 @@
+<%= form_with model: @question, url:questions_path, local: true do |f| %>
+  <div class="main-box">
+    Let's Active Question
+    <div class="question-box">
+      <%= f.text_area :quiz, class: "quiz", placeholder:"問題文" %>
+    </div>
+      <%= f.text_area :response, class: "response", placeholder:"解答" %>
+      <%= f.text_area :description, class: "description", placeholder: "説明" %>
+      <%= f.submit "LAQ", class:"button" %>
+  </div>
+<% end %>
