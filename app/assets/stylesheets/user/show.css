@@ -18,7 +18,6 @@
 }
 
 .table {
-  width: 500px;
   border: solid 1px #111111;
   margin: 0 auto;
 }
@@ -42,4 +41,26 @@
   border-collapse: collapse;
   padding: 16px 8px;
   color: #111111;
+}
+
+.btn_style {
+  border: 1px solid #111111;
+}
+
+.edit-btn {
+  padding: 5px;
+  border: 1px rgb(7, 122, 122) solid;
+  color: #111111;
+  margin: 5px;
+  background-color: aqua;
+  border-radius: 3px;
+}
+
+.destroy-btn {
+  padding: 5px;
+  color: #111111;
+  border: 1px rgb(119, 21, 21) solid;
+  margin-right: 5px;
+  background-color: red;
+  border-radius: 3px;
 }
