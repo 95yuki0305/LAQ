@@ -28,6 +28,13 @@ class QuestionsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to user_path(current_user.id)
+  end
+    
   private
 
   def question_params
