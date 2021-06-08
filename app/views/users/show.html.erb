@@ -10,6 +10,7 @@
           <th class="table__col1">投稿日時</th>
           <th class="table__col1">問題</th>
           <th class="table__col1">編集or削除</th>
+          <th class="table__col1">次の復習日</th>
         </tr>
       <% @question.each do |question| %>
         <tr>
@@ -22,6 +23,7 @@
             <%= link_to "削除", question_path(question.id), method: :delete, class:"destroy-btn" %>
               <%# <button class="btn">削除</button> %>
           </td>
+          <td><%= question.created_at.since(2.days).strftime('%Y/%m/%d') %>
         </tr>
       </tbody>
       <% end %>
