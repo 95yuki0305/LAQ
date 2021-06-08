@@ -12,7 +12,7 @@
         </tr>
       <% @question.each do |question| %>
         <tr>
-          <td class="file_img"><%= link_to image_tag("file-icon.png", size: "40x40"), "#" %></td>
+          <td class="file_img"><%= link_to image_tag("file-icon.png", size: "40x40"), edit_question_path(question.id) %></td>
           <td class="table__col2"><%= question.created_at.strftime('%Y/%m/%d') %></td>
           <td class="table__col2"><%= "#{question.quiz}" %></td>
         </tr>
