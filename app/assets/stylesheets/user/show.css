@@ -8,6 +8,7 @@
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
+  text-align: center;
 }
 
 .question_post {
@@ -17,8 +18,9 @@
 }
 
 .table {
-  width: 50%;
+  width: 500px;
   border: solid 1px #111111;
+  margin: 0 auto;
 }
 
 .table__col1{
@@ -27,6 +29,11 @@
   border-collapse: collapse;
   border: 1px solid #111111;
   padding: 8px;
+}
+
+.file_img {
+  text-align: center;
+  border: 1px solid #111111;
 }
 
 .table__col2{
