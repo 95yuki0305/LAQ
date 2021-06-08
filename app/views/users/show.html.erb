@@ -1,0 +1,37 @@
+<%= render "shared/second-header" %>
+<div class="user_page">
+  <h2 class="page-heading">
+    <%= @nickname %>さんの問題投稿一覧
+  </h2>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th class="table__col1">ファイル</th>
+          <th class="table__col1">投稿日時</th>
+          <th class="table__col1">問題</th>
+        </tr>
+      <% @question.each do |question| %>
+        <tr>
+          <td class="table__col2"><%= link_to "#{question.id}", "#" %>
+          <td class="table__col2"><%= "#{question.created_at}" %></td>
+          <td class="table__col2"><%= "#{question.quiz}" %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+</div>
+<%= render "shared/footer" %>
+
+<%# <div class="question_post">
+  <div class="quiz_number">
+    <%= link_to "問題#{question.id}", "#" %>
+  <%#<div class="quiz-form">
+    <%= "#{question.quiz}?" %>
+  <%#</div>
+  <%#<div class="response_text">
+    <%= question.response %>
+  </div>
+  <%#<div class="description_text">
+    <%= question.description %>
+  <%#</div>
+</div> %>

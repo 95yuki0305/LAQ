@@ -4,13 +4,12 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question_answer = QuestionAnswer.new
+    @question = Question.new
   end
 
   def create
-    @question_answer = QuestionAnswer.new(question_params)
-    if @question_answer.valid?
-      @question_answer.save
+    @question = Question.create(question_params)
+    if @question.save
       redirect_to root_path
     else
       render :new
@@ -20,6 +19,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question_answer).permit(:quiz, :response, :description).merge(user_id: current_user.id)
+    params.require(:question).permit(:quiz, :response, :description).merge(user_id: current_user.id)
   end
 end
