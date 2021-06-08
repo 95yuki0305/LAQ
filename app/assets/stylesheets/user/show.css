@@ -1,0 +1,45 @@
+.user_page {
+  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.page-heading {
+  font-size: 30px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.question_post {
+  height: 20vh;
+  background-color: #3377a700;
+  border: solid 1px #111111;
+}
+
+.table {
+  width: 500px;
+  border: solid 1px #111111;
+  margin: 0 auto;
+}
+
+.table__col1{
+  text-align: left;
+  font-weight: bold;
+  border-collapse: collapse;
+  border: 1px solid #111111;
+  padding: 8px;
+}
+
+.file_img {
+  text-align: center;
+  border: 1px solid #111111;
+}
+
+.table__col2{
+  text-align: left;
+  border: 1px solid #111111;
+  border-collapse: collapse;
+  padding: 16px 8px;
+  color: #111111;
+}
