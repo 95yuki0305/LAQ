@@ -1,0 +1,30 @@
+.check-table {
+  border: solid 1px #111111;
+  margin: 0 auto;
+}
+
+.check-table-col1 {
+  text-align: center;
+  font-weight: bold;
+  border-collapse: collapse;
+  border: 1px solid #111111;
+  padding: 8px;
+}
+
+.days {
+  font-size: 13px;
+}
+
+.check-table-col2 {
+  text-align: left;
+  border: 1px solid #111111;
+  border-collapse: collapse;
+  padding: 16px 8px;
+  color: #111111;
+}
+
+.check-page-heading {
+  font-size: 30px;
+  margin-bottom: 28px;
+  text-align: center;
+}

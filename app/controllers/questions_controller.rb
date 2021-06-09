@@ -34,7 +34,12 @@ class QuestionsController < ApplicationController
     @question.destroy
     redirect_to user_path(current_user.id)
   end
-    
+
+  def check
+    @question = Question.find(params[:id])
+    @nickname = current_user.nickname
+  end
+
   private
 
   def question_params

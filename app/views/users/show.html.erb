@@ -3,31 +3,31 @@
   <h2 class="page-heading">
     <%= @nickname %>さんの問題投稿一覧
   </h2>
-    <table class="table">
-      <tbody>
-        <tr>
-          <th class="table__col1">ファイル</th>
-          <th class="table__col1">投稿日時</th>
-          <th class="table__col1">問題</th>
-          <th class="table__col1">編集or削除</th>
-          <th class="table__col1">次の復習日</th>
-        </tr>
-      <% @question.each do |question| %>
-        <tr>
-          <td class="file_img"><%= link_to image_tag("file-icon.png", size: "40x40"), edit_question_path(question.id) %></td>
-          <td class="table__col2"><%= question.created_at.strftime('%Y/%m/%d') %></td>
-          <td class="table__col2"><%= "#{question.quiz}" %></td>
-          <td class="btn_style">
-            <%= link_to "編集", edit_question_path(question.id), method: :get, class:"edit-btn" %>
-              <%# <button class="btn">編集</button> %>
-            <%= link_to "削除", question_path(question.id), method: :delete, class:"destroy-btn" %>
-              <%# <button class="btn">削除</button> %>
-          </td>
-          <td><%= question.created_at.since(2.days).strftime('%Y/%m/%d') %>
-        </tr>
-      </tbody>
-      <% end %>
-    </table>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th class="table__col1">ファイル</th>
+        <th class="table__col1">投稿日時</th>
+        <th class="table__col1">問題</th>
+        <th class="table__col1">編集or削除</th>
+        <th class="table__col1">次の復習日</th>
+      </tr>
+    <% @question.each do |question| %>
+      <tr>
+        <td class="file_img"><%= link_to image_tag("file-icon.png", size: "40x40"), check_question_path(question.id) %></td>
+        <td class="table__col2"><%= question.created_at.strftime('%Y/%m/%d') %></td>
+        <td class="table__col2"><%= "#{question.quiz}" %></td>
+        <td class="btn_style">
+          <%= link_to "編集", edit_question_path(question.id), method: :get, class:"edit-btn" %>
+            <%# <button class="btn">編集</button> %>
+          <%= link_to "削除", question_path(question.id), method: :delete, class:"destroy-btn" %>
+            <%# <button class="btn">削除</button> %>
+        </td>
+        <td class="table__col2"><%= question.created_at.since(2.days).strftime('%Y/%m/%d') %>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
 </div>
 <%= render "shared/footer" %>
 
