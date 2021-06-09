@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       get 'check'
     end
+    resources :answers, only: [:index, :create]
   end
   resources :users, only: :show
 end
