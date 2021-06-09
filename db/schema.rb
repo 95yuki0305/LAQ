@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_06_09_044728) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "self_answer", null: false
     t.bigint "user_id"
     t.bigint "question_id"
     t.datetime "created_at", precision: 6, null: false
