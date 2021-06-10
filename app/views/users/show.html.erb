@@ -18,7 +18,7 @@
         <td class="file_img"><%= link_to image_tag("file-icon.png", size: "40x40"), check_question_path(question.id) %></td>
         <td class="table__col2"><%= question.created_at.strftime('%Y/%m/%d') %></td>
         <td class="table__col2"><%= "#{question.quiz}" %></td>
-        <td>
+        <td class="btn_style">
           <%= link_to "解答", question_answers_path(question.id), class:"answer-btn" %>
         </td>
         <td class="btn_style">

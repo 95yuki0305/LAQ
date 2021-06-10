@@ -14,6 +14,8 @@ class AnswersController < ApplicationController
   end
 
   def show
+    @answer = Answer.find(params[:id])
+    @question = Question.find(params[:question_id])
   end
 
   private
