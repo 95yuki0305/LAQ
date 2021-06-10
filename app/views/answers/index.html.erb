@@ -1,0 +1,18 @@
+<%= render "shared/second-header" %>
+<%= form_with model: @answer, url:question_answers_path, local: true do |f| %>
+  <div class="answer-main-box">
+    Let's Active Question
+    <div class="quiz-str">
+      <%= "問題" %>
+    </div>
+    <div class="quiz-box">
+      <%= @question.quiz %>
+    </div>
+    <div class="answer-str">
+      <%= "解答" %>
+    </div>
+      <%= f.text_area :self_answer, class: "answer", placeholder:"解答を入力して下さい" %>
+      <%= f.submit "LAQ", class:"button" %>
+  </div>
+<% end %>
+<%= render "shared/footer" %>

@@ -30,6 +30,10 @@
   padding: 8px;
 }
 
+.table-date {
+  text-align: center;
+}
+
 .file_img {
   text-align: center;
   border: 1px solid #111111;
@@ -43,16 +47,24 @@
   color: #111111;
 }
 
+.answer-btn {
+  padding: 5px;
+  border: 1px #046b6b solid;
+  color: #111111;
+  background-color: aqua;
+  border-radius: 3px;
+}
+
 .btn_style {
   border: 1px solid #111111;
 }
 
 .edit-btn {
   padding: 5px;
-  border: 1px rgb(7, 122, 122) solid;
+  border: 1px #8a07ef solid;
   color: #111111;
   margin: 5px;
-  background-color: aqua;
+  background-color: #d0a0f5;
   border-radius: 3px;
 }
 
