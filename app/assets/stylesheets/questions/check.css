@@ -1,3 +1,7 @@
+.check-main {
+  height: 100vh;
+}
+
 .check-table {
   border: solid 1px #111111;
   margin: 0 auto;
@@ -27,4 +31,10 @@
   font-size: 30px;
   margin-bottom: 28px;
   text-align: center;
+}
+
+.my-page {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
 }

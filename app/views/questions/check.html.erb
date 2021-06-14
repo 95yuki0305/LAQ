@@ -1,22 +1,26 @@
 <%= render "shared/second-header" %>
-<table class="check-table">
-  <h2 class="check-page-heading">
-    <%= @nickname %>さんの復習日一覧 
-  </h2>
-  <tbody>
-    <tr>
-      <th class="check-table-col1">1回目<span class= "days">(2日後)</span></th>
-      <th class="check-table-col1">2回目<span class= "days">(7日後)</span></th>
-      <th class="check-table-col1">3回目<span class= "days">(16日後)</span></th>
-      <th class="check-table-col1">4回目<span class= "days">(35日後)</span></th>
-      <th class="check-table-col1">5回目<span class= "days">(62日後)</span></th>
-    </tr>
-    <tr>
-      <td class="check-table-col2"><%= @question.created_at.since(2.days).strftime('%Y/%m/%d') %>
-      <td class="check-table-col2"><%= @question.created_at.since(7.days).strftime('%Y/%m/%d') %>
-      <td class="check-table-col2"><%= @question.created_at.since(16.days).strftime('%Y/%m/%d') %>
-      <td class="check-table-col2"><%= @question.created_at.since(35.days).strftime('%Y/%m/%d') %>
-      <td class="check-table-col2"><%= @question.created_at.since(62.days).strftime('%Y/%m/%d') %>
-    </tr>
-  </tbody>
-</table>
+<div class="check-main">
+  <table class="check-table">
+    <h2 class="check-page-heading">
+      <%= @nickname %>さんの復習日一覧 
+    </h2>
+    <tbody>
+      <tr>
+        <th class="check-table-col1">1回目<span class= "days">(2日後)</span></th>
+        <th class="check-table-col1">2回目<span class= "days">(7日後)</span></th>
+        <th class="check-table-col1">3回目<span class= "days">(16日後)</span></th>
+        <th class="check-table-col1">4回目<span class= "days">(35日後)</span></th>
+        <th class="check-table-col1">5回目<span class= "days">(62日後)</span></th>
+      </tr>
+      <tr>
+        <td class="check-table-col2"><%= @question.created_at.since(2.days).strftime('%Y/%m/%d') %>
+        <td class="check-table-col2"><%= @question.created_at.since(7.days).strftime('%Y/%m/%d') %>
+        <td class="check-table-col2"><%= @question.created_at.since(16.days).strftime('%Y/%m/%d') %>
+        <td class="check-table-col2"><%= @question.created_at.since(35.days).strftime('%Y/%m/%d') %>
+        <td class="check-table-col2"><%= @question.created_at.since(62.days).strftime('%Y/%m/%d') %>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "マイページに戻る", user_path(current_user.id), class:"my-page" %>
+</div>
+<%= render "shared/footer" %>

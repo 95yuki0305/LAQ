@@ -13,6 +13,7 @@
     </div>
       <%= f.text_area :self_answer, class: "answer", placeholder:"解答を入力して下さい" %>
       <%= f.submit "LAQ", class:"button" %>
+      <%= link_to "マイページに戻る", user_path(current_user.id), class:"mypage-back" %>
   </div>
 <% end %>
 <%= render "shared/footer" %>
