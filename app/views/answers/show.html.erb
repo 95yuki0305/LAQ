@@ -1,1 +1,33 @@
-<h1>Hello</h1>
+<%= render "shared/second-header" %>
+  <div class="a">
+    <div class="a-b">
+      <h2 class="a-b-b"> 答え合わせ
+      </h2>
+      <div class="b">
+        <%= "問題" %>
+      </div>
+      <div class="c">
+        <%= @question.quiz %>？
+      </div>
+      <div class="d">
+        <%= "自己解答" %>
+      </div>
+      <div class="e">
+        <%= @answer.self_answer %>
+      </div>
+      <div class="d">
+        <%= "解答" %>
+      </div>
+      <div class="e">
+        <%= @question.response %>
+      </div>
+      <div class="d">
+        <%= "説明" %>
+      </div>
+      <div class="e">
+        <%= @question.description %>
+      </div>
+        <%= link_to("戻る", user_path(current_user.id), class:"f") %>
+    </div>
+  </div>
+<%= render "shared/footer" %>

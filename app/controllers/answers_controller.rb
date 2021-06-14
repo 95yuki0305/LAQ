@@ -7,8 +7,10 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
     if @answer.save
-      redirect_to user_path(current_user.id)
+      @question = Question.find(params[:question_id])
+      render :show
     else
+      @question = Question.find(params[:question_id])
       render :index
     end
   end

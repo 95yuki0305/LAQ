@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
   belongs_to :user
-  has_one :answer
+  has_many :answers, dependent: :destroy
 
   with_options presence: true do
     validates :quiz
