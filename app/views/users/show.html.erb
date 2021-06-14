@@ -27,7 +27,19 @@
           <%= link_to "削除", question_path(question.id), method: :delete, class:"destroy-btn" %>
             <%# <button class="btn">削除</button> %>
         </td>
-        <td class="table__col2"><%= question.created_at.since(2.days).strftime('%Y/%m/%d') %>
+        <% if @date <= question.created_at.since(2.days).strftime('%Y/%m/%d') %>
+          <td class="table__col2"><%= question.created_at.since(2.days).strftime('%Y/%m/%d') %></td>
+        <% elsif @date <= question.created_at.since(7.days).strftime('%Y/%m/%d') %>
+          <td class="table__col2"><%= question.created_at.since(7.days).strftime('%Y/%m/%d') %></td>
+        <% elsif @date <= question.created_at.since(16.days).strftime('%Y/%m/%d') %>
+          <td class="table__col2"><%= question.created_at.since(16.days).strftime('%Y/%m/%d') %></td>
+        <% elsif @date <= question.created_at.since(35.days).strftime('%Y/%m/%d') %>
+          <td class="table__col2"><%= question.created_at.since(35.days).strftime('%Y/%m/%d') %></td>
+        <% elsif @date <= question.created_at.since(62.days).strftime('%Y/%m/%d') %>
+          <td class="table__col2"><%= question.created_at.since(62.days).strftime('%Y/%m/%d') %></td>
+        <% else %>
+          <td class="table__col2"><%= "習得済み" %></td>
+        <% end %>
       </tr>
     </tbody>
     <% end %>
