@@ -27,6 +27,7 @@
           <%= link_to "削除", question_path(question.id), method: :delete, class:"destroy-btn" %>
             <%# <button class="btn">削除</button> %>
         </td>
+        <%# 次の復習日の日程が現在の日程を超えると次の復習日を表示する %>
         <% if @date <= question.created_at.since(2.days).strftime('%Y/%m/%d') %>
           <td class="table__col2"><%= question.created_at.since(2.days).strftime('%Y/%m/%d') %></td>
         <% elsif @date <= question.created_at.since(7.days).strftime('%Y/%m/%d') %>
@@ -44,7 +45,11 @@
     </tbody>
     <% end %>
   </table>
+  <%= link_to "Topページへ戻る", root_path, class:"top" %>
 </div>
+<%= link_to(new_question_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿する</span>
+<% end %>
 <%= render "shared/footer" %>
 
 <%# <div class="question_post">
