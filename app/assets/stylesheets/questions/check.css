@@ -2,8 +2,13 @@
   height: 100vh;
 }
 
+.check-page-heading {
+  font-size: 30px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
 .check-table {
-  border: solid 1px #111111;
   margin: 0 auto;
 }
 
@@ -27,11 +32,6 @@
   color: #111111;
 }
 
-.check-page-heading {
-  font-size: 30px;
-  margin-bottom: 28px;
-  text-align: center;
-}
 
 .my-page {
   display: block;
