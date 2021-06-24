@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, except: :index
+
   def index
     @question = Question.where(user_id: current_user.id).count if user_signed_in?
   end
