@@ -10,8 +10,7 @@
           <li><%= link_to "現在の投稿数:#{@question}", "#", class: "header-button" %></li>
         <% end %>
         <li><%= link_to current_user.nickname, user_path(current_user.id), class: "header-button" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path,
-         method: :delete, class: "header-button" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-button" %></li>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "header-button" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "header-button" %></li>
