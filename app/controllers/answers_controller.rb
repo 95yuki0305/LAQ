@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @answer = Answer.new
     @question = Question.find(params[:question_id])
