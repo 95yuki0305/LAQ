@@ -69,7 +69,7 @@
   cursor: pointer;
   padding: 8px 20px;
   color: #FFFFFF;
-  line-height: 1em;         /* 1行の高さ  */
+  line-height: 1em;
   transition: .3s;
   border: 2px solid #f4f1f1;
   font-weight: bold;

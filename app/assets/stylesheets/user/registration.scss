@@ -60,22 +60,22 @@
 
 .actions {
   display       : inline-block;
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 18pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 12px 12px;   /* 余白       */
-  background    : #258;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */  /* 影の設定 */
-  border        : 2px solid #258;    /* 枠の指定 */
+  border-radius : 5%;
+  font-size     : 18pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 12px 12px;
+  background    : #258;
+  color         : #ffffff;
+  line-height   : 1em;
+  transition    : .3s;
+  border        : 2px solid #258;
 }
 
 .actions:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #ffffff;     /* 背景色     */
-  background    : black;     /* 文字色     */
+  box-shadow    : none;
+  color         : #ffffff;
+  background    : black;
 }
 
 .log-in {
