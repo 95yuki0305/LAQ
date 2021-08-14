@@ -1,20 +1,21 @@
-<%# CSS・・・assets/stylesheets/shared/header.css %>
-<header class='top-page-header'>
-  <div class='heading'>
-    <%= link_to image_tag("LAQ.png", class:"logo"), "/" %>
-  </div>
-  <div class='navbar'>
-    <ul class='nav-lists'>
-      <% if user_signed_in? %>
-        <% if @question > 0 %>
-          <li><%= link_to "現在の投稿数:#{@question}", "#", class: "header-button" %></li>
+<header class='first-header'>
+  <div class="container">
+    <div class='header-left'>
+        <%= link_to "LAQ", "/", class:"header-logo" %>
+    </div>
+    <div class='header-right'>
+      <ul class='header-list'>
+        <% if user_signed_in? %>
+          <% if @question > 0 %>
+          <li><%= link_to "現在の投稿数:#{@question}", "#", class: "header-btn" %></li>
+          <% end %>
+          <li><%= link_to current_user.nickname, user_path(current_user.id), class: "header-btn" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-btn" %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "header-btn" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "header-btn" %></li>
         <% end %>
-        <li><%= link_to current_user.nickname, user_path(current_user.id), class: "header-button" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-button" %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "header-button" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "header-button" %></li>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
 </header>
