@@ -14,9 +14,9 @@
 
     <div class="form-group">
       <p class="form-label">解答<span class="indispensable">必須</span></p>
-      <%= f.text_area :response, class: "form-text", placeholder: "解答を入力してください" %>
+      <%= f.text_area :self_answer, class: "form-text", placeholder: "解答を入力してください" %>
     </div>
-    <%= f.submit "送信", class: "send-btn" %>
+      <%= f.submit "送信", class: "send-btn" %>
     <div class= "btn-position">
       <%= link_to "マイページに戻る", user_path(current_user.id), class: "change-btn" %>
     </div>

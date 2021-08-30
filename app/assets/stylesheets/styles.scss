@@ -160,7 +160,7 @@
   height: 50vh;
 }
 
-// 新規登録画面(devise/registrations/new.html.erb)
+// 新規登録画面とログイン画面(devise/registrations/new.html.erb)
 
 .signup-main, .login-main {
   background-color: #F2F6F7;
@@ -217,11 +217,16 @@
   margin-left: 10px;
 }
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .form-label {
   margin-bottom: 5px;
+}
+
+.signup-main .form-text,
+.login-main .form-text {
+  height: 35px;
 }
 
 .form-text {
@@ -231,7 +236,6 @@
   height: 50px;
   padding-left: 7px;
   font-size: 15px;
-  margin-bottom: 8px;
 }
 
 .signup-btn,
@@ -275,7 +279,8 @@
 // 問題投稿画面
 
 .question-form,
-.answer-form {
+.answer-form,
+.check-answer-form {
   background-color: #F2F6F7;
   display: flex;
   align-items: center;
@@ -334,15 +339,13 @@
 }
 
 // 解答フォーム画面
-.answer-form .form-text {
+.answer-form .form-text,
+.check-answer-form .form-text {
   resize: none;
   height: auto;
-  margin-bottom: 18px;
 }
 
-.send-btn {
-  margin-top: 0;
-}
+
 
 .btn-position {
   display: flex;
@@ -352,4 +355,9 @@
 .answer-form .change-btn {
   padding-bottom: 0;
   margin-top: 10px;
+}
+
+// 答え合わせ画面
+.red {
+  color: red;
 }
