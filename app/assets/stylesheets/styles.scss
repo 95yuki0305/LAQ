@@ -233,7 +233,6 @@
   width: 100%;
   border: 1px solid #d9d9d9;
   background-color: #FBFBFB;
-  height: 50px;
   padding-left: 7px;
   font-size: 15px;
 }
@@ -345,19 +344,23 @@
   height: auto;
 }
 
-
-
 .btn-position {
   display: flex;
   justify-content: center;
-}
-
-.answer-form .change-btn {
-  padding-bottom: 0;
   margin-top: 10px;
 }
 
 // 答え合わせ画面
 .red {
   color: red;
+}
+
+// 問題編集画面
+.back-btn {
+  color: #888888;
+  border-bottom: 1px solid #888888;
+}
+
+.back-btn:hover {
+  color: #111111;
 }

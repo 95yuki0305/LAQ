@@ -18,8 +18,7 @@
     </div>
       <%= f.submit "送信", class: "send-btn" %>
     <div class= "btn-position">
-      <%= link_to "マイページに戻る", user_path(current_user.id), class: "change-btn" %>
+      <%= link_to "マイページに戻る", user_path(current_user.id), class: "back-btn" %>
     </div>
   </div>
 <% end %>
-<%= render "shared/footer" %>
