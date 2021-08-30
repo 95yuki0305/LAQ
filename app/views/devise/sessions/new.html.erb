@@ -1,32 +1,28 @@
-<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
-<div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      ログインページ
-    </h1>
+<%= render "shared/header" %>
+<%= form_with model: @user, url: user_session_path, class: 'login-main', local: true do |f| %>
+<div class='main-form'>
+  <div class='form-heading'>
+    <h1>ログインページ</h1>
   </div>
 
-  <div class="main-form">
   <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="form-group">
-      <label class="form-text">メールアドレス</label>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="form-group">
-      <label class="form-text">パスワード</label>
-        <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-
-
-    <div class="sign-up-button">
-      <%= f.submit "Sign in", class:"actions"%>
-    </div>
-
-    <div class="log-in">
-      <%= link_to '新規登録の方はこちらをクリック', new_user_registration_path %>
-    </div>
+  <div class="form-group">
+    <p class="form-label">メールアドレス</p>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-text"%>
   </div>
+
+  <div class="form-group">
+    <p class="form-label">パスワード</p>
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-text"%>
+  </div>
+
+  <div class="login">
+    <%= f.submit "ログイン", class:"login-btn"%>
+  </div>
+
+  <div class="change">
+    <span>アカウントをお持ちではないですか？</span>
+    <%= link_to '今すぐ作成', new_user_registration_path, class:"change-btn"%>
+  </div>
+</div>
 <% end %>

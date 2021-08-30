@@ -23,9 +23,7 @@
         </td>
         <td class="btn_style">
           <%= link_to "編集", edit_question_path(question.id), method: :get, class:"edit-btn" %>
-            <%# <button class="btn">編集</button> %>
           <%= link_to "削除", question_path(question.id), method: :delete, class:"destroy-btn" %>
-            <%# <button class="btn">削除</button> %>
         </td>
         <%# 次の復習日の日程が現在の日程を超えると次の復習日を表示する %>
         <% if @date <= question.created_at.since(2.days).strftime('%Y/%m/%d') %>
@@ -51,17 +49,3 @@
   <span class='purchase-btn-text'>投稿する</span>
 <% end %>
 <%= render "shared/footer" %>
-
-<%# <div class="question_post">
-  <div class="quiz_number">
-    <%= link_to "問題#{question.id}", "#" %>
-  <%#<div class="quiz-form">
-    <%= "#{question.quiz}?" %>
-  <%#</div>
-  <%#<div class="response_text">
-    <%= question.response %>
-  <%# </div> %>
-  <%#<div class="description_text">
-    <%= question.description %>
-  <%#</div>
-</div> %>
