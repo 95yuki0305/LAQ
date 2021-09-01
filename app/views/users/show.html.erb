@@ -1,51 +1,50 @@
 <%= render "shared/second-header" %>
-<div class="user_page">
-  <h2 class="page-heading">
-    <%= @nickname %>さんの問題投稿一覧
-  </h2>
-  <table class="table">
-    <tbody>
-      <tr>
-        <th class="table__col1">ファイル</th>
-        <th class="table__col1">投稿日時</th>
-        <th class="table__col1">問題</th>
-        <th class="table__col1">解答する</th>
-        <th class="table__col1">編集or削除</th>
-        <th class="table__col1">次の復習日</th>
-      </tr>
-    <% @question.each do |question| %>
-      <tr class="table-date" >
-        <td class="file_img"><%= link_to image_tag("file-icon.png", size: "40x40"), check_question_path(question.id) %></td>
-        <td class="table__col2"><%= question.created_at.strftime('%Y/%m/%d') %></td>
-        <td class="table__col2"><%= "#{question.quiz}" %></td>
-        <td class="btn_style">
-          <%= link_to "解答", question_answers_path(question.id), class:"answer-btn" %>
-        </td>
-        <td class="btn_style">
-          <%= link_to "編集", edit_question_path(question.id), method: :get, class:"edit-btn" %>
-          <%= link_to "削除", question_path(question.id), method: :delete, class:"destroy-btn" %>
-        </td>
-        <%# 次の復習日の日程が現在の日程を超えると次の復習日を表示する %>
-        <% if @date <= question.created_at.since(2.days).strftime('%Y/%m/%d') %>
-          <td class="table__col2"><%= question.created_at.since(2.days).strftime('%Y/%m/%d') %></td>
-        <% elsif @date <= question.created_at.since(7.days).strftime('%Y/%m/%d') %>
-          <td class="table__col2"><%= question.created_at.since(7.days).strftime('%Y/%m/%d') %></td>
-        <% elsif @date <= question.created_at.since(16.days).strftime('%Y/%m/%d') %>
-          <td class="table__col2"><%= question.created_at.since(16.days).strftime('%Y/%m/%d') %></td>
-        <% elsif @date <= question.created_at.since(35.days).strftime('%Y/%m/%d') %>
-          <td class="table__col2"><%= question.created_at.since(35.days).strftime('%Y/%m/%d') %></td>
-        <% elsif @date <= question.created_at.since(62.days).strftime('%Y/%m/%d') %>
-          <td class="table__col2"><%= question.created_at.since(62.days).strftime('%Y/%m/%d') %></td>
-        <% else %>
-          <td class="table__col2"><%= "習得済み" %></td>
+<div class="layout-page">
+  <div class="container">
+    <div class="side-bar">
+      <div class="side-bar-item">
+        問題投稿一覧
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <div class="name-field">
+        <%= @nickname %>さんのマイページ
+      </div>
+      <div class="main-content">
+        <div class="main-content-heading">
+          <div class="main-content-text">
+            問題投稿一覧
+          </div>
+        </div>
+        <div class="review-day">
+          次回復習日
+        </div>
+        <% @question.each do |question| %>
+        <div class="main-item">
+          <div class="main-item-text">
+            <%= question.quiz %>
+          </div>
+          <div class="review-date">
+            <%= question.created_at.since(2.days).strftime('%m/%d')%>
+          </div>
+        </div>
+        <div class="modal hidden">
+          <div class="main-item-text">
+            <h2>問題文</h2>
+            <div class="question-text">
+              <%= question.quiz %>
+            </div>
+          </div>
+          <%= link_to "解答", question_answers_path(question.id), class:"btn-answer"%>
+          <%= link_to "編集", edit_question_path(question.id), method: :get, class:"btn-edit"%>
+          <%= link_to "削除", question_path(question.id), method: :delete, class:"btn-destroy"%>
+          <div class="close">
+            閉じる
+          </div>
+        </div>
         <% end %>
-      </tr>
-    </tbody>
-    <% end %>
-  </table>
-  <%= link_to "Topページへ戻る", root_path, class:"top" %>
+      </div>
+    </div>
+  </div>
 </div>
-<%= link_to(new_question_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>投稿する</span>
-<% end %>
-<%= render "shared/footer" %>
+<div id="mask" class="hidden"></div>
