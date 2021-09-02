@@ -2,8 +2,8 @@
 <div class="layout-page">
   <div class="container">
     <div class="side-bar">
-      <div class="side-bar-item">
-        問題投稿一覧
+      <div class="side-bar-items">
+        <%= link_to "問題投稿一覧", "#", class:"side-bar-item"%>
       </div>
     </div>
     <div class="main-wrapper">
@@ -24,9 +24,31 @@
           <div class="main-item-text">
             <%= question.quiz %>
           </div>
-          <div class="review-date">
-            <%= question.created_at.since(2.days).strftime('%m/%d')%>
-          </div>
+          <% if @date <= question.created_at.since(2.days).strftime('%Y/%m/%d') %>
+            <div class="review-date">
+              <%= question.created_at.since(2.days).strftime('%m/%d')%>
+            </div>
+          <% elsif @date <= question.created_at.since(7.days).strftime('%Y/%m/%d') %>
+            <div class="review-date">
+              <%= question.created_at.since(7.days).strftime('%m/%d')%>
+            </div>
+          <% elsif @date <= question.created_at.since(16.days).strftime('%Y/%m/%d') %>
+            <div class="review-date">
+              <%= question.created_at.since(16.days).strftime('%m/%d')%>
+            </div>
+          <% elsif @date <= question.created_at.since(35.days).strftime('%Y/%m/%d') %>
+            <div class="review-date">
+              <%= question.created_at.since(35.days).strftime('%m/%d')%>
+            </div>
+          <% elsif @date <= question.created_at.since(62.days).strftime('%Y/%m/%d') %>
+            <div class="review-date">
+              <%= question.created_at.since(62.days).strftime('%m/%d')%>
+            </div>
+          <% else %>
+            <div class="review-date">
+              <%= "習得済み"%>
+            </div>
+          <% end %>
         </div>
         <div class="modal hidden">
           <div class="main-item-text">

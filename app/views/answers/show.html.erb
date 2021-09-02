@@ -32,7 +32,8 @@
         <%= @question.description %>
       </div>
     </div>
-        <%= link_to("戻る", user_path(current_user.id), class:"f") %>
+    <div class= "btn-position">
+      <%= link_to("復習日チェック", check_question_path(@question.id), class:"back-btn") %>
     </div>
   </div>
 </div>
