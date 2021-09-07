@@ -1,36 +1,46 @@
 <%= render "shared/second-header" %>
 <div class="check-main">
-  <table class="check-table">
-    <h2 class="check-page-heading">
-      復習日一覧 
-    </h2>
-    <tbody>
-      <tr>
-        <th class="check-table-col1">1回目<span class= "days">(2日後)</span></th>
-        <th class="check-table-col1">チェック</th>
-        <th class="check-table-col1">2回目<span class= "days">(7日後)</span></th>
-        <th class="check-table-col1">チェック</th>
-        <th class="check-table-col1">3回目<span class= "days">(16日後)</span></th>
-        <th class="check-table-col1">チェック</th>
-        <th class="check-table-col1">4回目<span class= "days">(35日後)</span></th>
-        <th class="check-table-col1">チェック</th>
-        <th class="check-table-col1">5回目<span class= "days">(62日後)</span></th>
-        <th class="check-table-col1">チェック</th>
-      </tr>
-      <tr>
-        <td class="check-table-col2"><%= @question.created_at.since(2.days).strftime('%Y/%m/%d') %></td>
-        <td class="check-table-col1"><%= check_box "object-name", "property-name" %></td>
-        <td class="check-table-col2"><%= @question.created_at.since(7.days).strftime('%Y/%m/%d') %></td>
-        <td class="check-table-col1"><%= check_box "object-name", "property-name" %></td>
-        <td class="check-table-col2"><%= @question.created_at.since(16.days).strftime('%Y/%m/%d') %></td>
-        <td class="check-table-col1"><%= check_box "object-name", "property-name" %></td>
-        <td class="check-table-col2"><%= @question.created_at.since(35.days).strftime('%Y/%m/%d') %></td>
-        <td class="check-table-col1"><%= check_box "object-name", "property-name" %></td>
-        <td class="check-table-col2"><%= @question.created_at.since(62.days).strftime('%Y/%m/%d') %></td>
-        <td class="check-table-col1"><%= check_box "object-name", "property-name" %></td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <th>復習回数</th>
+      <th>目標日</th>
+      <th>完了日</th>
+      <th>チェック</th>
+    </tr>
+    <tr>
+      <td class="icon">1回目</td>
+      <td><%= @question.created_at.since(2.days).strftime('%Y/%m/%d') %></td>
+      <td>2000/00/00</td>
+      <td><%= check_box "object-name", "property-name" %></td>
+    </tr>
+    <tr>
+      <td class="icon">2回目</td>
+      <td><%= @question.created_at.since(7.days).strftime('%Y/%m/%d') %></td>
+      <td>2000/00/00</td>
+      <td><%= check_box "object-name", "property-name" %></td>
+    </tr>
+    <tr>
+      <td class="icon">3回目</td>
+      <td><%= @question.created_at.since(16.days).strftime('%Y/%m/%d') %></td>
+      <td>2000/00/00</td>
+      <td><%= check_box "object-name", "property-name" %></td>
+    </tr>
+    <tr>
+      <td class="icon">4回目</td>
+      <td><%= @question.created_at.since(35.days).strftime('%Y/%m/%d') %></td>
+      <td>2000/00/00</td>
+      <td><%= check_box "object-name", "property-name" %></td>
+    </tr>
+    <tr>
+      <td class="icon">5回目</td>
+      <td><%= @question.created_at.since(62.days).strftime('%Y/%m/%d') %></td>
+      <td>2000/00/00</td>
+      <td><%= check_box "object-name", "property-name" %></td>
+    </tr>
   </table>
+</div>
+<div class= "btn-position">
   <%= link_to "マイページに戻る", user_path(current_user.id), class:"my-page" %>
 </div>
+
 <%= render "shared/footer" %>
