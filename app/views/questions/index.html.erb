@@ -1,55 +1,68 @@
 <%= render "shared/header" %>
-<div class='main'>
-  <div class='title-contents'>
-    <h2 class='service-title'>
-      あなたのクイズが人生を変える!!
-    </h2>
-    <p class='service-explain'>
-      LAQはだれでもかんたんに問題・解答を投稿できる
-    </p>
-    <p class='service-explain'>
-      アプリです
-    </p>
+<div class="main">
+  <div class='top-wrapper'>
+    <div class='container'>
+      <h2 class='service-title'>あなたのクイズが人生を変える!!</h2>
+      <p class='service-explain'>LAQはだれでもかんたんに問題・解答を投稿し、復習できるアウトプットツールです</p>
+      <% unless user_signed_in? %>
+        <%= link_to "はじめる", new_user_registration_path, class:"start-btn" %>
+      <% end %>
+      <div class="start-content">
+      </div>
+    </div>
   </div>
-  <h2 class='memory-mechanism'>
-    記憶のメカニズム
-  </h2>
-  <div class="memory-contents">
-    <%# <h2 class='service-title'> %>
-      <%# すぐに忘れる!! %>
-    <%# </h2> %>
-  </div>
+
   <div class='app-description'>
     <h2 class='title'>
-      <span class="str1">LAQ</span>とは？
+      <span>LAQ</span>とは？
     </h2>
+    <div class="laq-description">
+      <div class="str">
+        <span class="red-text">L</span>et's <span class="red-text">A</span>ctive <span class="red-text">Q</span>uestion
+      </div>の略称
+      <p>「積極的に問題をしよう」「楽(LAQ)に覚えられる」という意味</p>
+    </div>
+  </div>
 
-      <div class="laq-description">
-        <span class="str2">L</span>et's <span class="str2">A</span>ctive <span class="str2">Q</span>uestion
-      </div>
-    <%#<ul class="laq-description">
-      <li>
-        <div class="laq-str">
-          Let's
-        </div>
-        <%= image_tag 'LAQ.png', class:"laq-img"
+  <div class="use-app-contents">
+    <h2 class='title'>
+      <span>LAQ</span>の使い方
+    </h2>
+    <ul class="use-app-lists">
+      <li class='list'>
+        <%= image_tag "LAQ01.jpg", class:"list-pict" %>
+        <h3 class='use-list-text'>
+          <span class='use-list-red-text'>覚えたい</span>
+          ことをクイズ化
+        </h3>
+        <p class='use-list-description'>
+          アウトプットしたい内容をクイズ方式にする！
+        </p>
       </li>
-      <li>
-        <div class="laq-str">
-          Active
-        </div>
-        <%= image_tag 'LAQ.png', class:"laq-img"
+      <li class='list'>
+        <%= image_tag "LAQ02.png", class:"list-pict" %>
+        <h3 class='use-list-text'>
+          <span class='use-list-red-text'>クイズ化</span>
+          したら投稿
+        </h3>
+        <p class='use-list-description'>
+          問題作成フォームに入力・保存で完了！
+        </p>
       </li>
-      <li>
-        <div class="laq-str">
-          Question
-        </div>
-        <%= image_tag 'LAQ.png', class:"laq-img"
+      <li class='list'>
+        <%= image_tag "LAQ03.jpg", class:"list-pict" %>
+        <h3 class='use-list-text'>
+          <span class='use-list-red-text'>ベスト</span>
+          なタイミングで復習
+        </h3>
+        <p class='use-list-description'>
+          マイページにて、頭に残るベストなタイミングで復習することが出来る！
+        </p>
       </li>
-      </div>%>
+    </ul>
   </div>
 </div>
+<%= render "shared/footer" %>
 <%= link_to(new_question_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>投稿する</span>
 <% end %>
-<%= render "shared/footer" %>

@@ -1,19 +1,24 @@
 <%= render "shared/second-header" %>
-<%= form_with model: @answer, url:question_answers_path, local: true do |f| %>
-  <div class="answer-main-box">
-    Let's Active Question
-    <div class="quiz-str">
-      <%= "問題" %>
+<%= form_with model: @answer, url:question_answers_path, class:"answer-form", local: true do |f| %>
+  <div class="main-form">
+    <div class="form-heading">
+      <h1>解答フォーム</h1>
     </div>
-    <div class="quiz-box">
-      <%= @question.quiz %>
+
+    <div class="form-group">
+      <p class="form-label">問題</p>
+      <div class="form-text">
+        <%= @question.quiz %>
+      </div>
     </div>
-    <div class="answer-str">
-      <%= "解答" %>
+
+    <div class="form-group">
+      <p class="form-label">解答<span class="indispensable">必須</span></p>
+      <%= f.text_area :self_answer, class: "form-text", placeholder: "解答を入力してください" %>
     </div>
-      <%= f.text_area :self_answer, class: "answer", placeholder:"解答を入力して下さい" %>
-      <%= f.submit "LAQ", class:"button" %>
-      <%= link_to "マイページに戻る", user_path(current_user.id), class:"mypage-back" %>
+      <%= f.submit "送信", class: "send-btn" %>
+    <div class= "btn-position">
+      <%= link_to "マイページに戻る", user_path(current_user.id), class: "back-btn" %>
+    </div>
   </div>
 <% end %>
-<%= render "shared/footer" %>

@@ -1,0 +1,651 @@
+* {
+  box-sizing: border-box;
+}
+
+// メインヘッダーとサブヘッダー(_header.html.erb)
+.first-header {
+  width: 100%;
+  height: 65px;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.second-header {
+  width: 100%;
+  height: 65px;
+  background-color: rgba(34, 49, 52, 0.9);
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.header-left {
+  margin-left: 30px;
+}
+
+.header-logo {
+  color: white;
+  font-size: 35px;
+  opacity: 0.8;
+  transition: .3s;
+  font-family: Georgia;
+}
+
+.header-logo:hover {
+  opacity: 1;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 65px;
+}
+
+.header-list li {
+  display: inline-block;
+}
+
+.header-btn {
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: #FFFFFF;
+  transition: .3s;
+  border: 1px solid #f4f1f1;
+  font-weight: bold;
+  margin-right: 20px;
+  letter-spacing: 1px;
+}
+
+.header-btn:hover {
+  color: #000000;
+  background: #ffffff;
+}
+
+// トップページ(questions/index.html.erb)
+.main {
+  background: #f8f8f8;
+}
+
+.top-wrapper {
+  width: 100vw;
+  padding: 5vh 15vw;
+  margin-top: 65px;
+  background-image: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%),image-url('top-img.jpg');
+  background-size: cover;
+}
+
+.top-wrapper .container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-title {
+  font-size: 60px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow:  2px  2px 10px #777,
+               -2px  2px 10px #777,
+                2px -2px 10px #777,
+               -2px -2px 10px #777;
+}
+
+.service-explain {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 10px;
+  text-shadow:  2px  2px 10px #777,
+               -2px  2px 10px #777,
+                2px -2px 10px #777,
+               -2px -2px 10px #777;
+}
+
+.start-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #ff0000;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #b60808;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.start-btn:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.app-description {
+  padding: 5vh 15vw;
+}
+
+.app-description>.title {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+}
+
+.app-description span,
+.use-app-contents .title span {
+  font-weight   : bold;
+  font-size     : 150%;
+}
+
+.laq-description {
+  font-size: 3.5vh;
+  text-align: center;
+}
+
+.str {
+  background    : linear-gradient(transparent 50%, rgba(255, 0, 0, 0.49) 90%);
+  display: inline;
+  font-size: 3.5vh;
+}
+
+.red-text {
+  color: #ff0000; 
+}
+
+.use-app-contents {
+  padding: 5vh 15vw;
+}
+
+.app-description>.title,
+.use-app-contents>.title {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.app-description>.title::after,
+.use-app-contents>.title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: #CC0000;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.use-app-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.use-app-lists>.list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.list {
+  margin-bottom: 30px;
+}
+
+.list-pict {
+  display: inline-block;
+  height: 250px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 8px gray;
+}
+
+.use-list-text {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+.use-list-red-text {
+  color: #CC0000;
+}
+
+.use-list-description {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+// 新規登録画面とログイン画面(devise/registrations/new.html.erb)
+
+.signup-main, .login-main {
+  background-color: #F2F6F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 910px;
+}
+
+.main-form {
+  padding: 48px 64px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 0 8px gray;
+  width: 600px;
+}
+
+.main-form .container {
+  flex-direction: column;
+}
+
+.form-heading {
+  text-align: center;
+  width: 100%;
+}
+
+.form-heading h1 {
+  font-size: 18px;
+  padding-bottom: 30px;
+}
+
+.form-heading p {
+  color: #949697;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.form-heading p::before,
+.form-heading p::after {
+  content: '';
+  width: 36%;
+  height: 1px;
+  background-color: #949697;
+}
+
+.form-heading p::before {
+  margin-right: 10px;
+}
+
+.form-heading p::after {
+  margin-left: 10px;
+}
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  margin-bottom: 5px;
+}
+
+.signup-main .form-text,
+.login-main .form-text {
+  height: 35px;
+}
+
+.form-text {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  background-color: #FBFBFB;
+  padding-left: 7px;
+  font-size: 15px;
+}
+
+.signup-btn,
+.login-btn,
+.send-btn {
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: #FFFFFF;
+  transition: .3s;
+  font-weight: bold;
+  background-color: #444444;
+  border: none;
+  opacity: .8;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.signup-btn:hover,
+.login-btn:hover,
+.send-btn:hover {
+  opacity: 1;
+}
+
+.change {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.change-btn {
+  color: #888888;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #888888;
+}
+
+.change-btn:hover {
+  color: #111111;
+}
+
+// 問題投稿画面
+
+.question-form,
+.answer-form,
+.check-answer-form {
+  background-color: #F2F6F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 910px;
+}
+
+.question-form .main-form {
+  flex-direction: column;
+  display: flex;
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.question-form .form-text {
+  resize: none;
+  padding-top: 5px;
+}
+
+.sub-text {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  background-color: #FBFBFB;
+  height: 180px;
+  padding-left: 7px;
+  font-size: 15px;
+  resize: none;
+  padding-top: 5px;
+}
+.button {
+  display       : inline-block;
+  border-radius : 5%;
+  font-size     : 18pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 12px 12px;
+  background    : #00DD00;
+  color         : #ffffff;
+  line-height   : 1em;
+  transition    : .3s;
+  border        : 2px solid #004400;
+}
+
+.button:hover {
+  color         : #000066;
+  background    : #ffffff;
+}
+
+// 解答フォーム画面
+.answer-form .form-text,
+.check-answer-form .form-text {
+  resize: none;
+  height: auto;
+}
+
+.btn-position {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+// 答え合わせ画面
+.red {
+  color: red;
+  font-weight: bold;
+}
+
+// 問題編集画面
+.back-btn {
+  color: #888888;
+  border-bottom: 1px solid #888888;
+}
+
+.back-btn:hover {
+  color: #111111;
+}
+
+// 
+.layout-page {
+  padding: 40px 0px 50px;
+  justify-content: center;
+  color: rgb(44, 62, 80);
+}
+
+.layout-page .container {
+  justify-content: center;
+}
+
+.side-bar {
+  margin-right: 30px;
+  border-right: 1px solid rgb(227, 231, 232);
+  font-size: 19px;
+  padding: 10px 20px 10px 0px;
+}
+
+.side-bar-items {
+  margin: 20px 0 0 20px;
+}
+
+.side-bar-item {
+  color: #2c3e50;
+}
+.side-bar-item:hover {
+  text-decoration: underline;
+}
+.name-field {
+  border-bottom: 1px solid rgb(227, 231, 232);
+  font-size: 30px;
+  padding: 20px;
+  font-weight: bold;
+  width: 480px;
+}
+
+.main-content {
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid rgb(227, 231, 232);
+  border-radius: 3px;
+  font-size: 19px;
+}
+
+.main-content-text {
+  font-size: 27px;
+  margin-bottom: 35px;
+}
+
+.review-day {
+  text-align: right;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.main-item {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(227, 231, 232);
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 438px;
+  height: 55px;
+  
+  transition: .3s;
+}
+
+.main-item:hover {
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+  transform: translateY(-4px);
+}
+
+.main-item-text {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  vertical-align: middle;
+}
+
+// モーダル
+.modal {
+  background: #fff;
+  width: 820px;
+  padding: 20px;
+  border-radius: 4px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.4s;
+  z-index: 2;
+  animation-name: fade;
+  animation-duration: 0.5s;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.modal .main-item-text {
+  margin-bottom: 25px;
+}
+
+.modal h2 {
+  margin-bottom: 5px;
+}
+
+.question-text {
+  text-align: center;
+}
+
+.btn-answer,
+.btn-edit,
+.btn-destroy {
+  width : calc(96% / 3) ;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  text-align: center;
+}
+
+.btn-answer {
+  border-left: solid 20px #0000FF;
+  color: #0000FF;
+  margin-right: 10px
+}
+
+.btn-edit {
+  border-left: solid 20px #FF00FF;
+  color: #FF00FF;
+  margin-right: 10px;
+}
+
+.btn-destroy {
+  border-left: solid 20px #FF0000;
+  color: #FF0000;
+}
+
+.btn-answer:active,
+.btn-edit:active,
+.btn-destroy:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.hidden {
+  display: none;
+}
+
+.close {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 16px auto 0;
+  width: 32%;
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+// 復習日一覧
+.check-main {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+table tr:hover{
+  background-color: #d4f0fd;
+}
+
+table th,table td{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+}
+
+table td.icon{
+  background-size: 35px;
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+}

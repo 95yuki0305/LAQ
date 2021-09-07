@@ -1,41 +1,39 @@
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-<div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      新規登録ページ
-    </h1>
+<%= render "shared/header" %>
+<%= form_with model: @user, url: user_registration_path, class:'signup-main', local: true do |f| %>
+<div class='main-form'>
+  <div class='form-heading'>
+    <h1>ユーザーアカウント作成</h1>
+    <p>アカウント情報</p>
   </div>
 
-  <div class="main-form">
   <%= render "devise/shared/error_messages", resource: resource %>
-  
-    <div class="form-group">
-      <label class="form-text">ニックネーム</label>
-        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
-    </div>
-
-    <div class="form-group">
-      <label class="form-text">メールアドレス</label>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="form-group">
-      <label class="form-text">パスワード</label>
-        <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="form-group">
-      <label class="form-text">パスワード(確認用)</label>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
-    <div class="sign-up-button">
-      <%= f.submit "Sign up", class:"actions"%>
-    </div>
-
-    <div class="log-in">
-      <%= link_to 'ログインの方はこちらをクリック', new_user_session_path %>
-    </div>
+  <div class="form-group">
+    <p class="form-label">ニックネーム<span class="indispensable">必須</span></p>
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class:"form-text"%>
   </div>
+
+  <div class="form-group">
+    <p class="form-label">メールアドレス<span class="indispensable">必須</span></p>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-text"%>
+  </div>
+
+  <div class="form-group">
+    <p class="form-label">パスワード<span class="indispensable">必須</span></p>
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-text"%>
+  </div>
+
+  <div class="form-group">
+    <p class="form-label">パスワード<span class="indispensable">確認</span></p>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-text"%>
+  </div>
+
+  <div class="signup">
+    <%= f.submit "アカウント作成", class:"signup-btn"%>
+  </div>
+
+  <div class="change">
+    <span>すでにアカウントをお持ちですか?</span>
+    <%= link_to 'ログイン', new_user_session_path, class:"change-btn" %>
+  </div>
+</div>
 <% end %>
-<div class="anim-box"></div>

@@ -7,7 +7,7 @@
       <ul class='header-list'>
         <% if user_signed_in? %>
           <% if @question > 0 %>
-          <li><%= link_to "現在の投稿数:#{@question}", "#", class: "header-btn" %></li>
+          <li><%= link_to "現在の投稿数: #{@question}", "#", class: "header-btn" %></li>
           <% end %>
           <li><%= link_to current_user.nickname, user_path(current_user.id), class: "header-btn" %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-btn" %></li>

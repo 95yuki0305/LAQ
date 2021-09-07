@@ -1,33 +1,40 @@
 <%= render "shared/second-header" %>
-  <div class="a">
-    <div class="a-b">
-      <h2 class="a-b-b"> 答え合わせ
-      </h2>
-      <div class="b">
-        <%= "問題" %>
+<div class="check-answer-form">
+  <div class="main-form">
+    <div class="form-heading">
+      <h1>答え合わせ</h1>
+    </div>
+
+    <div class="form-group">
+      <p class="form-label">問題</p>
+      <div class="form-text">
+        <%= @question.quiz %>
       </div>
-      <div class="c">
-        <%= @question.quiz %>？
-      </div>
-      <div class="d">
-        <%= "自己解答" %>
-      </div>
-      <div class="e">
+    </div>
+
+    <div class="form-group">
+      <p class="form-label">自己解答</p>
+      <div class="form-text">
         <%= @answer.self_answer %>
       </div>
-      <div class="d">
-        <%= "解答" %>
-      </div>
-      <div class="e">
+    </div>
+
+    <div class="form-group">
+      <p class="form-label">解答</p>
+      <div class="red form-text">
         <%= @question.response %>
       </div>
-      <div class="d">
-        <%= "説明" %>
-      </div>
-      <div class="e">
+    </div>
+
+    <div class="form-group">
+      <p class="form-label">説明文</p>
+      <div class="red sub-text">
         <%= @question.description %>
       </div>
-        <%= link_to("戻る", user_path(current_user.id), class:"f") %>
+    </div>
+    <div class= "btn-position">
+      <%= link_to("復習日チェック", check_question_path(@question.id), class:"back-btn") %>
     </div>
   </div>
+</div>
 <%= render "shared/footer" %>
