@@ -1,24 +1,24 @@
 <%= render "shared/second-header" %>
 <%= form_with model: @answer, url:question_answers_path, class:"answer-form", local: true do |f| %>
-  <div class="main-form">
-    <div class="form-heading">
-      <h1>解答フォーム</h1>
-    </div>
-
-    <div class="form-group">
-      <p class="form-label">問題</p>
-      <div class="form-text">
-        <%= @question.quiz %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <p class="form-label">解答<span class="indispensable">必須</span></p>
-      <%= f.text_area :self_answer, class: "form-text", placeholder: "解答を入力してください" %>
-    </div>
-      <%= f.submit "送信", class: "send-btn" %>
-    <div class= "btn-position">
-      <%= link_to "マイページに戻る", user_path(current_user.id), class: "back-btn" %>
+<div class="main-form">
+  <div class="form-heading">
+    <h1>解答フォーム</h1>
+  </div>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="form-group">
+    <p class="form-label">問題</p>
+    <div class="form-text">
+      <%= @question.quiz %>
     </div>
   </div>
-<% end %>
+
+  <div class="form-group">
+    <p class="form-label">解答<span class="indispensable">必須</span></p>
+    <%= f.text_area :self_answer, class: "form-text", placeholder: "解答を入力してください" %>
+  </div>
+    <%= f.submit "送信", class: "send-btn" %>
+  <% end %>
+  <div class= "btn-position">
+    <%= link_to "マイページに戻る", user_path(current_user.id), class: "back-btn" %>
+  </div>
+</div>

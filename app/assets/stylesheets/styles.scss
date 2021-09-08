@@ -649,3 +649,26 @@ table td.icon{
   background-position: left 5px center;
   background-repeat: no-repeat;
 }
+
+// エラーメッセージ
+.error-alert {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.error-alert h2 {
+  display: none;
+}
+
+.error-message {
+  font-size: 15px;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+}
