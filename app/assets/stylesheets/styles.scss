@@ -617,9 +617,14 @@
 // 復習日一覧
 .check-main {
   margin-top: 30px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+}
 
+.check-main h2 {
+  font-size: 25px;
+  border-bottom: solid 1px #eee;
+  padding-bottom: 15px;
 }
 
 table{

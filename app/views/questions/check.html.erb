@@ -1,5 +1,6 @@
 <%= render "shared/second-header" %>
 <div class="check-main">
+  <h2>復習日一覧</h2>
   <table>
     <tr>
       <th>復習回数</th>
@@ -40,7 +41,5 @@
   </table>
 </div>
 <div class= "btn-position">
-  <%= link_to "マイページに戻る", user_path(current_user.id), class:"my-page" %>
+  <%= link_to "マイページに戻る", user_path(current_user.id), class:"back-btn" %>
 </div>
-
-<%= render "shared/footer" %>
