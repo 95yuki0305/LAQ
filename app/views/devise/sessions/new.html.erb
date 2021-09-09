@@ -5,7 +5,10 @@
     <h1>ログインページ</h1>
   </div>
 
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+  </div>
   <div class="form-group">
     <p class="form-label">メールアドレス</p>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-text"%>
@@ -19,10 +22,9 @@
   <div class="login">
     <%= f.submit "ログイン", class:"login-btn"%>
   </div>
-
+  <% end %>
   <div class="change">
     <span>アカウントをお持ちではないですか？</span>
     <%= link_to '今すぐ作成', new_user_registration_path, class:"change-btn"%>
   </div>
 </div>
-<% end %>

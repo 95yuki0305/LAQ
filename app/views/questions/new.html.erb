@@ -1,25 +1,25 @@
 <%= render "shared/second-header" %>
 <%= form_with model: @question, url:questions_path, class:"question-form", local: true do |f| %>
-  <div class="main-form">
-    <div class="form-heading">
-      <h1>問題作成フォーム</h1>
-    </div>
-
-    <div class="form-group">
-      <p class="form-label">問題<span class="indispensable">必須</span></p>
-      <%= f.text_area :quiz, class: "form-text", placeholder: "問題を入力してください"%>
-    </div>
-
-    <div class="form-group">
-      <p class="form-label">解答<span class="indispensable">必須</span></p>
-      <%= f.text_area :response, class: "form-text", placeholder: "解答を入力してください" %>
-    </div>
-
-    <div class="form-group">
-      <p class="form-label">説明文</p>
-      <%= f.text_area :description, class: "sub-text", placeholder: "説明文を入力してください" %>
-    </div>
-      <%= f.submit "保存する", class:"signup-btn" %>
-    </div>
+<div class="main-form">
+  <div class="form-heading">
+    <h1>問題作成フォーム</h1>
   </div>
-<% end %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="form-group">
+    <p class="form-label">問題<span class="indispensable">必須</span></p>
+    <%= f.text_area :quiz, class: "form-text", placeholder: "問題を入力してください"%>
+  </div>
+
+  <div class="form-group">
+    <p class="form-label">解答<span class="indispensable">必須</span></p>
+    <%= f.text_area :response, class: "form-text", placeholder: "解答を入力してください" %>
+  </div>
+
+  <div class="form-group">
+    <p class="form-label">説明文</p>
+    <%= f.text_area :description, class: "sub-text", placeholder: "説明文を入力してください" %>
+  </div>
+    <%= f.submit "保存する", class:"signup-btn" %>
+  </div>
+  <% end %>
+</div>

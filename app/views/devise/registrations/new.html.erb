@@ -6,7 +6,7 @@
     <p>アカウント情報</p>
   </div>
 
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render "devise/shared/error_messages", model: f.object %>
   <div class="form-group">
     <p class="form-label">ニックネーム<span class="indispensable">必須</span></p>
     <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class:"form-text"%>
@@ -30,10 +30,9 @@
   <div class="signup">
     <%= f.submit "アカウント作成", class:"signup-btn"%>
   </div>
-
+  <% end %>
   <div class="change">
     <span>すでにアカウントをお持ちですか?</span>
     <%= link_to 'ログイン', new_user_session_path, class:"change-btn" %>
   </div>
 </div>
-<% end %>
