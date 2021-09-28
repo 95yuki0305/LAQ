@@ -13,10 +13,11 @@ https://laq-35586.herokuapp.com/
  
 # テスト用アカウント
  
-ベーシック認証 username = 99camp  password = 9945
+ベーシック認証
+ユーザー名 = 99camp  パスワード = 9945
 
 ログイン用
-メールアドレス test@com パスワード aaa111
+メールアドレス test@com  パスワード aaa111
 
 # 利用方法
  
